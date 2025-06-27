@@ -1,4 +1,4 @@
-package com.vitoraugusto.vieats;
+package com.vitoraugusto.vieats.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.vitoraugusto.vieats.R;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView imageLogo;
@@ -22,7 +24,7 @@ public class SplashActivity extends AppCompatActivity {
             new Handler().postDelayed(() -> {
 
                 imageLogo.animate().alpha(0f).setDuration(500).withEndAction(() -> {
-                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    startActivity(new Intent(SplashActivity.this, RegisterActivity.class));
                     finish();
                 });
             }, 2000);
