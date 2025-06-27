@@ -38,17 +38,19 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         cadastrar.setOnClickListener(v -> {
-            String nom= nome.getText().toString().trim();
-            String cp= cpf.getText().toString().trim();
+            String nom = nome.getText().toString().trim();
+            String cp = cpf.getText().toString().trim();
             String emai = email.getText().toString().trim();
             String senh = senha.getText().toString().trim();
 
             if (nom.isEmpty() || cp.isEmpty() || emai.isEmpty() || senh.isEmpty()) {
                 Toast.makeText(RegisterActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
             } else {
-                Pessoa pessoa = new Pessoa(nom,cpf,emai, senha);
+                Pessoa pessoa = new Pessoa(nom, cp, emai, senh);
                 Toast.makeText(RegisterActivity.this, "Cadastro Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
+    }
+}
