@@ -9,6 +9,33 @@
     android:background="#FFFFFF"
     >
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="478dp"
+        android:layout_height="281dp"
+        android:background="#183163"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:titleTextColor="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="272dp"
+        android:layout_height="223dp"
+        android:layout_marginTop="40dp"
+        android:elevation="4dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/vieats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <EditText
         android:id="@+id/cpf"
         android:layout_width="wrap_content"
@@ -16,41 +43,30 @@
         android:ems="10"
         android:hint="Digite seu CPF"
         android:inputType="text"
-        android:shadowColor="#132E5D"
-        android:textColor="#132E5D"
-        android:textColorHighlight="#132E5D"
-        android:textColorHint="#4B4545"
+        android:shadowColor="#183163"
+        android:textColor="#183163"
+        android:textColorHighlight="#183163"
+        android:textColorHint="#183163"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791" />
+        app:layout_constraintVertical_bias="0.795" />
 
     <TextView
         android:id="@+id/cadas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CADASTRE-SE"
-        android:textColor="#132E5D"
+        android:textColor="#1A3368"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="195dp"
-        android:layout_height="160dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145"
-        app:srcCompat="@drawable/vieats" />
+        app:layout_constraintVertical_bias="0.432" />
 
     <EditText
         android:id="@+id/nome"
@@ -59,27 +75,28 @@
         android:ems="10"
         android:hint="Digite seu nome"
         android:inputType="text"
-        android:shadowColor="#132E5D"
-        android:textColor="#132E5D"
-        android:textColorHighlight="#132E5D"
-        android:textColorHint="#4B4545"
+        android:shadowColor="#183163"
+        android:textColor="#183163"
+        android:textColorHighlight="#183163"
+        android:textColorHint="#183163"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.537" />
 
     <Button
         android:id="@+id/realizarC"
         android:layout_width="291dp"
         android:layout_height="58dp"
-        android:backgroundTint="#132E5D"
+        android:backgroundTint="#183163"
         android:text="FINALIZAR CADASTRO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.931" />
 
     <EditText
         android:id="@+id/email"
@@ -88,13 +105,13 @@
         android:ems="10"
         android:hint="Digite seu email"
         android:inputType="textEmailAddress"
-        android:textColorHint="#4B4545"
+        android:textColorHint="#183163"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.626" />
 
     <EditText
         android:id="@+id/senha"
@@ -103,11 +120,13 @@
         android:ems="10"
         android:hint="Digite sua senha"
         android:inputType="textPassword"
-        android:textColorHint="#4B4545"
+        android:textColorHint="#183163"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="0.714" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
