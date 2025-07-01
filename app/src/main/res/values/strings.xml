@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">ViEats</string>
-</resources>
+        <string name="app_name">ViEats</string>
+        <string name="order_prompt">Qual vai ser o pedido hoje?</string>
+        <string name="search_hint">Item ou Loja...</string>
+        <string name="category_title">CATEGORIAS</string>
+        <string name="category_homemade">REFEIÇÕES CASEIRAS</string>
+        <string name="category_japanese">COMIDAS JAPONESAS</string>
+        <string name="category_salads">SALADAS</string>
+        <string name="category_pizzas">PIZZAS</string>
+        <string name="category_snacks">LANCHES</string>
+        <string name="category_desserts">SOBREMESAS</string>
+        <string name="search_icon_description">Pesquisar</string>
+        <string name="logo_description">Logo ViEats</string>
+    </resources>

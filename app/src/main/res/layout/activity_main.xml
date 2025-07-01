@@ -8,17 +8,143 @@
     android:background="#FFFFFF"
     tools:context=".view.MainActivity">
 
+    <!-- Toolbar -->
+
+    <!-- Logo -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="418dp"
+        android:layout_width="match_parent"
         android:layout_height="131dp"
         android:background="#183163"
         android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextColor="#FFFFFF"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="-5dp" />
+        tools:layout_editor_absoluteX="1dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="86dp"
+        android:layout_height="84dp"
+        android:elevation="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vieats" />
+
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="263dp"
+        android:layout_height="41dp"
+        android:elevation="4dp"
+        android:ems="10"
+        android:hint="Item ou Loja..."
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="#E9E9E9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <ImageView
+        android:id="@+id/lupa"
+        android:layout_width="31dp"
+        android:layout_height="39dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:srcCompat="@drawable/lupa" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CATEGORIAS"
+        android:textColor="#183163"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/comuns" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/comidajaponesa" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:srcCompat="@drawable/salada" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/pizza" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/lanches" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="0dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:srcCompat="@drawable/sobremesas" />
 
     <View
         android:id="@+id/overlayPizza"
@@ -30,10 +156,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="@+id/imageView8" />
-
-
-
-
     <View
         android:id="@+id/overlayJaponesa"
         android:layout_width="168dp"
@@ -44,8 +166,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="@+id/imageView7" />
-
-
     <View
         android:id="@+id/overlaySalada"
         android:layout_width="168dp"
@@ -62,120 +182,88 @@
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5" />
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="175dp"
-        android:layout_height="167dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319"
-        app:srcCompat="@drawable/comuns" />
+    <View
+        android:id="@+id/overlayLanches"
+        android:layout_width="168dp"
+        android:layout_height="166dp"
+        android:background="#80000000"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="175dp"
-        android:layout_height="167dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319"
-        app:srcCompat="@drawable/comidajaponesa" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="176dp"
-        android:layout_height="167dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657"
-        app:srcCompat="@drawable/salada" />
-
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="176dp"
-        android:layout_height="167dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656"
-        app:srcCompat="@drawable/pizza" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="86dp"
-        android:layout_height="84dp"
-        android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
-        app:srcCompat="@drawable/vieats" />
-
-
+    <View
+        android:id="@+id/overlaySobremesas"
+        android:layout_width="168dp"
+        android:layout_height="166dp"
+        android:background="#80000000"
+        android:elevation="3dp"
+        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="249dp"
-        android:layout_height="39dp"
+        android:id="@+id/textViewSobremesas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="4dp"
-        android:text="Qual vai ser o pedido hoje?"
+        android:text="SOBREMESAS"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.099" />
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintStart_toStartOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/imageView10" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="261dp"
-        android:layout_height="42dp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="4dp"
-        android:ems="10"
-        android:hint="Item ou Loja..."
-        android:inputType="text"
+        android:text="COMIDAS JAPONESAS"
         android:textColor="@color/white"
-        android:textColorHighlight="#F8F8F8"
-        android:textColorHint="#E9E9E9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.68"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.046" />
-
-    <ImageView
-        android:id="@+id/lupa"
-        android:layout_width="31dp"
-        android:layout_height="39dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/overlayJaponesa"
+        app:layout_constraintEnd_toEndOf="@+id/overlayJaponesa"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="@+id/overlayJaponesa"
+        app:layout_constraintVertical_bias="0.517" />
+    <TextView
+        android:id="@+id/textViewLanches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.873"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043"
-        app:srcCompat="@drawable/lupa" />
+        android:text="LANCHES"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:text="SALADAS"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/overlaySalada"
+        app:layout_constraintEnd_toEndOf="@+id/overlaySalada"
+        app:layout_constraintStart_toStartOf="@+id/overlaySalada"
+        app:layout_constraintTop_toTopOf="@+id/overlaySalada"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView2"
@@ -185,47 +273,13 @@
         android:text="REFEIÇÕES CASEIRAS "
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355"
-        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:text="COMIDA JAPONESA"
-
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.355"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="4dp"
-        android:text="SALADAS"
-
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.209"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="@+id/overlayComuns"
+        app:layout_constraintHorizontal_bias="0.825"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.513" />
 
     <TextView
         android:id="@+id/textView5"
@@ -235,24 +289,27 @@
         android:text="PIZZAS"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.781"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="@+id/overlayPizza"
+        app:layout_constraintEnd_toEndOf="@+id/overlayPizza"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toTopOf="@+id/overlayPizza"
+        app:layout_constraintVertical_bias="0.503" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#183163"
-        android:text="CATEGORIAS"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="137dp"
+        android:elevation="4dp"
+        android:text="Qual vai ser o pedido hoje?"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textSize="20dp"/>
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
