@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Digite seu CPF"
-        android:inputType="text"
+        android:inputType="number"
         android:shadowColor="#183163"
         android:textColor="#183163"
         android:textColorHighlight="#183163"

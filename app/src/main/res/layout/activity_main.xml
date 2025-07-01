@@ -8,9 +8,7 @@
     android:background="#FFFFFF"
     tools:context=".view.MainActivity">
 
-    <!-- Toolbar -->
 
-    <!-- Logo -->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -23,20 +21,20 @@
         app:titleTextColor="#FFFFFF"
         tools:layout_editor_absoluteX="1dp" />
 
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="86dp"
         android:layout_height="84dp"
-        android:elevation="4dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
+        android:elevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vieats" />
 
-
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/pesquisar"
         android:layout_width="263dp"
         android:layout_height="41dp"
         android:elevation="4dp"
@@ -50,15 +48,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/logo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.065" />
 
     <ImageView
         android:id="@+id/lupa"
         android:layout_width="31dp"
         android:layout_height="39dp"
         android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextText"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisar"
+        app:layout_constraintEnd_toEndOf="@+id/pesquisar"
         app:srcCompat="@drawable/lupa" />
 
 
@@ -84,7 +82,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/comuns"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
@@ -94,7 +92,7 @@
         app:srcCompat="@drawable/comuns" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/comidaJaponesa"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
@@ -106,44 +104,44 @@
 
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/saladas"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@id/comuns"
         app:srcCompat="@drawable/salada" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/pizzas"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/comidaJaponesa"
         app:srcCompat="@drawable/pizza" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/lanches"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/saladas"
         app:srcCompat="@drawable/lanches" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/sobremesas"
         android:layout_width="0dp"
         android:layout_height="167dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/pizzas"
         app:srcCompat="@drawable/sobremesas" />
 
     <View
@@ -152,40 +150,40 @@
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintTop_toTopOf="@+id/imageView8"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="@+id/imageView8" />
+        app:layout_constraintTop_toTopOf="@+id/pizzas"
+        app:layout_constraintBottom_toBottomOf="@+id/pizzas"
+        app:layout_constraintStart_toStartOf="@+id/pizzas"
+        app:layout_constraintEnd_toEndOf="@+id/pizzas" />
     <View
         android:id="@+id/overlayJaponesa"
         android:layout_width="168dp"
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7" />
+        app:layout_constraintTop_toTopOf="@+id/comidaJaponesa"
+        app:layout_constraintBottom_toBottomOf="@+id/comidaJaponesa"
+        app:layout_constraintStart_toStartOf="@+id/comidaJaponesa"
+        app:layout_constraintEnd_toEndOf="@+id/comidaJaponesa" />
     <View
         android:id="@+id/overlaySalada"
         android:layout_width="168dp"
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6" />
+        app:layout_constraintTop_toTopOf="@+id/saladas"
+        app:layout_constraintBottom_toBottomOf="@+id/saladas"
+        app:layout_constraintStart_toStartOf="@+id/saladas"
+        app:layout_constraintEnd_toEndOf="@+id/saladas" />
     <View
         android:id="@+id/overlayComuns"
         android:layout_width="168dp"
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+        app:layout_constraintBottom_toBottomOf="@id/comuns"
+        app:layout_constraintEnd_toEndOf="@id/comuns"
+        app:layout_constraintStart_toStartOf="@id/comuns"
+        app:layout_constraintTop_toTopOf="@id/comuns" />
 
     <View
         android:id="@+id/overlayLanches"
@@ -193,10 +191,10 @@
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/lanches"
+        app:layout_constraintEnd_toEndOf="@+id/lanches"
+        app:layout_constraintStart_toStartOf="@+id/lanches"
+        app:layout_constraintTop_toTopOf="@+id/lanches"
         app:layout_constraintVertical_bias="1.0" />
 
     <View
@@ -205,10 +203,11 @@
         android:layout_height="166dp"
         android:background="#80000000"
         android:elevation="3dp"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10" />
+        app:layout_constraintBottom_toBottomOf="@+id/sobremesas"
+        app:layout_constraintEnd_toEndOf="@+id/sobremesas"
+        app:layout_constraintStart_toStartOf="@+id/sobremesas"
+        app:layout_constraintTop_toTopOf="@+id/sobremesas"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textViewSobremesas"
@@ -218,10 +217,10 @@
         android:text="SOBREMESAS"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/imageView10"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
-        app:layout_constraintStart_toStartOf="@+id/imageView10"
-        app:layout_constraintEnd_toEndOf="@+id/imageView10" />
+        app:layout_constraintTop_toTopOf="@+id/sobremesas"
+        app:layout_constraintBottom_toBottomOf="@+id/sobremesas"
+        app:layout_constraintStart_toStartOf="@+id/sobremesas"
+        app:layout_constraintEnd_toEndOf="@+id/sobremesas" />
 
     <TextView
         android:id="@+id/textView3"
@@ -233,10 +232,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/overlayJaponesa"
         app:layout_constraintEnd_toEndOf="@+id/overlayJaponesa"
-        app:layout_constraintHorizontal_bias="0.692"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="@+id/comidaJaponesa"
         app:layout_constraintTop_toTopOf="@+id/overlayJaponesa"
         app:layout_constraintVertical_bias="0.517" />
+
     <TextView
         android:id="@+id/textViewLanches"
         android:layout_width="wrap_content"
@@ -245,11 +245,11 @@
         android:text="LANCHES"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="@+id/imageView9"
+        app:layout_constraintBottom_toBottomOf="@+id/lanches"
+        app:layout_constraintEnd_toEndOf="@+id/lanches"
         app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        app:layout_constraintStart_toStartOf="@+id/lanches"
+        app:layout_constraintTop_toTopOf="@+id/lanches" />
 
     <TextView
         android:id="@+id/textView4"
@@ -274,11 +274,11 @@
         android:textColor="@color/white"
         android:textStyle="bold"
 
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@id/comuns"
         app:layout_constraintEnd_toEndOf="@+id/overlayComuns"
-        app:layout_constraintHorizontal_bias="0.825"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="@id/comuns"
+        app:layout_constraintTop_toTopOf="@id/comuns"
         app:layout_constraintVertical_bias="0.513" />
 
     <TextView
@@ -292,7 +292,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/overlayPizza"
         app:layout_constraintEnd_toEndOf="@+id/overlayPizza"
         app:layout_constraintHorizontal_bias="0.572"
-        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/pizzas"
         app:layout_constraintTop_toTopOf="@+id/overlayPizza"
         app:layout_constraintVertical_bias="0.503" />
 
@@ -307,9 +307,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.105" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViEats"
         tools:targetApi="31">
+        <activity android:name=".view.ComunsActivity" />
         <activity android:name=".view.RegisterActivity" />
         <activity android:name=".view.SplashActivity"
             android:exported="true">
