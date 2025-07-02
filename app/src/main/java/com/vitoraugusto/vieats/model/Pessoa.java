@@ -11,7 +11,7 @@ public class Pessoa {
     public Pessoa(){
 
     }
-    public Pessoa(String nome, String cpf, String email, String senha) {
+    public Pessoa(String nome, String email, String senha, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;

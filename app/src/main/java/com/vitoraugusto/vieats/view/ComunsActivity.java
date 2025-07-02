@@ -2,8 +2,13 @@ package com.vitoraugusto.vieats.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +30,7 @@ public class ComunsActivity extends AppCompatActivity {
             Intent intent = new Intent(ComunsActivity.this, MainActivity.class);
             startActivity(intent);
         });
+
     }
 
 
