@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView lupa;
     View comuns, comidaJ, pizzas, saladas, sobremesas, lanches;
     EditText pesquisar;
+    ImageView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +38,17 @@ public class MainActivity extends AppCompatActivity {
         saladas = findViewById(R.id.overlaySalada);
         sobremesas = findViewById(R.id.overlaySobremesas);
         lanches = findViewById(R.id.overlayLanches);
+        logout = findViewById(R.id.logout);
 
         lupa.setOnClickListener(v -> {
             pesquisar.setText("");
         });
         comuns.setOnClickListener(v->{
             Intent intent = new Intent(MainActivity.this, ComunsActivity.class);
+            startActivity(intent);
+        });
+        logout.setOnClickListener(v ->{
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         });
     }

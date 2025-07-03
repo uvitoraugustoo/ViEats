@@ -62,7 +62,7 @@
         app:srcCompat="@drawable/pratoarroz" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textoImg1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,9 +80,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="R$ 29,99"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textoImg1"
+        app:layout_constraintStart_toStartOf="@+id/textoImg1"
+        app:layout_constraintEnd_toEndOf="@+id/textoImg1" />
 
     <TextView
         android:id="@+id/textView11"
@@ -92,8 +92,8 @@
         android:textColor="#183163"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/textView8" />
+        app:layout_constraintStart_toStartOf="@+id/textoImg1"
+        app:layout_constraintEnd_toEndOf="@+id/textoImg1" />
 
 
     <ImageView

@@ -2,11 +2,7 @@ package com.vitoraugusto.vieats.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.ForegroundColorSpan;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.vitoraugusto.vieats.R;
 
 public class ComunsActivity extends AppCompatActivity {
-    ImageView voltar;
+    ImageView voltar, img1;
+    TextView textoImg1;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +23,21 @@ public class ComunsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comuns);
 
         voltar = findViewById(R.id.voltar);
+        img1 = findViewById(R.id.img1);
+        textoImg1 = findViewById(R.id.textoImg1);
 
-        voltar.setOnClickListener(v->{
+        voltar.setOnClickListener(v -> {
             Intent intent = new Intent(ComunsActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
+
+        img1.setOnClickListener(v -> {
+            Intent intent = new Intent(ComunsActivity.this, ComunsComprarActivity.class);
+            startActivity(intent);
+        });
+
+        textoImg1.setOnClickListener(v ->{
+            Intent intent = new Intent(ComunsActivity.this, ComunsComprarActivity.class);
             startActivity(intent);
         });
 

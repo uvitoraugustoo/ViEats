@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViEats"
         tools:targetApi="31">
+        <activity android:name=".view.FinalizarPedidosComuns" />
+        <activity android:name=".view.ComunsComprarActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.ComunsActivity" />
         <activity android:name=".view.RegisterActivity" />

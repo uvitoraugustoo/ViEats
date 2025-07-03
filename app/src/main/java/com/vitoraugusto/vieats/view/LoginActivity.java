@@ -1,10 +1,12 @@
 package com.vitoraugusto.vieats.view;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,20 +19,26 @@ import com.vitoraugusto.vieats.model.Pessoa;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailL, senhaL;
-    private Button realizarL;
+    private Button realizarL, limpar2;
     Pessoa pessoa;
-  LoginController loginController;
+    TextView cadastroNull;
+    LoginController loginController;
+    RegisterActivity registerActivity;
 
+
+    @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-       loginController = new LoginController(this);
+        loginController = new LoginController(this);
 
         emailL = findViewById(R.id.emailL);
         senhaL = findViewById(R.id.senhaL);
         realizarL = findViewById(R.id.realizarL);
+        cadastroNull = findViewById(R.id.cadastroNull);
+        limpar2 = findViewById(R.id.limpar2);
 
         PessoaController pessoaController = new PessoaController(LoginActivity.this);
         pessoa = pessoaController.carregarLogin();
@@ -38,12 +46,11 @@ public class LoginActivity extends AppCompatActivity {
         realizarL.setOnClickListener(v -> {
             String email = emailL.getText().toString().trim();
             String senha = senhaL.getText().toString().trim();
-            if (email.isEmpty() || senha.isEmpty())  {
+            if (email.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
             } else if (!email.equals(pessoa.getEmail()) || !senha.equals(pessoa.getSenha())) {
                 Toast.makeText(LoginActivity.this, "O email ou a senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
             } else {
-
                 Toast.makeText(LoginActivity.this, "Login Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -56,14 +63,28 @@ public class LoginActivity extends AppCompatActivity {
                 loginController.loginPessoa(pessoa);
             }
         });
+
+        cadastroNull.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+                }
+
+        );
+        limpar2.setOnClickListener(v ->{
+            emailL.setText("");
+            senhaL.setText("");
+        });
+
+
         carregarPessoaSalva();
     }
+
     public void carregarPessoaSalva() {
         Pessoa pessoa2 = loginController.carregarPessoa();
         emailL.setText(pessoa2.getEmail());
         senhaL.setText(pessoa2.getSenha());
 
     }
-            }
+}
 
 
