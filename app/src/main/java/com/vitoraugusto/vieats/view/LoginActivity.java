@@ -1,0 +1,69 @@
+package com.vitoraugusto.vieats.view;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.vitoraugusto.vieats.R;
+import com.vitoraugusto.vieats.controller.LoginController;
+import com.vitoraugusto.vieats.controller.PessoaController;
+import com.vitoraugusto.vieats.model.Pessoa;
+
+public class LoginActivity extends AppCompatActivity {
+    private EditText emailL, senhaL;
+    private Button realizarL;
+    Pessoa pessoa;
+  LoginController loginController;
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_login);
+
+       loginController = new LoginController(this);
+
+        emailL = findViewById(R.id.emailL);
+        senhaL = findViewById(R.id.senhaL);
+        realizarL = findViewById(R.id.realizarL);
+
+        PessoaController pessoaController = new PessoaController(LoginActivity.this);
+        pessoa = pessoaController.carregarLogin();
+
+        realizarL.setOnClickListener(v -> {
+            String email = emailL.getText().toString().trim();
+            String senha = senhaL.getText().toString().trim();
+            if (email.isEmpty() || senha.isEmpty())  {
+                Toast.makeText(LoginActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
+            } else if (!email.equals(pessoa.getEmail()) || !senha.equals(pessoa.getSenha())) {
+                Toast.makeText(LoginActivity.this, "O email ou a senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
+            } else {
+
+                Toast.makeText(LoginActivity.this, "Login Finalizado!!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                pessoa = new Pessoa(
+
+                        emailL.getText().toString(),
+                        senhaL.getText().toString()
+
+                );
+                loginController.loginPessoa(pessoa);
+            }
+        });
+        carregarPessoaSalva();
+    }
+    public void carregarPessoaSalva() {
+        Pessoa pessoa2 = loginController.carregarPessoa();
+        emailL.setText(pessoa2.getEmail());
+        senhaL.setText(pessoa2.getSenha());
+
+    }
+            }
+
+

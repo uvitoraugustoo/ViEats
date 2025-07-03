@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity"
-    android:background="#FFFFFF"
-    >
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/limpar"
-        android:layout_width="207dp"
-        android:layout_height="56dp"
-        android:backgroundTint="#183163"
-        android:text="LIMPAR INFORMAÇÕES"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -30,15 +15,13 @@
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:titleTextColor="#FFFFFF" />
 
-
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/logoLogin"
         android:layout_width="272dp"
         android:layout_height="223dp"
         android:layout_marginTop="24dp"
@@ -50,44 +33,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/cpf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="CPF"
-        android:inputType="number"
-        android:shadowColor="#183163"
-        android:textColor="#183163"
-        android:textColorHighlight="#183163"
-        android:textColorHint="#183163"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.734" />
-
     <TextView
-        android:id="@+id/cadas"
+        android:id="@+id/log"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CADASTRE-SE"
+        android:text="LOGIN"
         android:textColor="#1A3368"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.412" />
 
     <EditText
-        android:id="@+id/nome"
+        android:id="@+id/emailL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="Digite seu email"
         android:inputType="text"
         android:shadowColor="#183163"
         android:textColor="#183163"
@@ -97,49 +61,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/realizarC"
-        android:layout_width="291dp"
-        android:layout_height="58dp"
-        android:backgroundTint="#183163"
-        android:text="FINALIZAR CADASTRO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="0.514"
+        tools:ignore="TextFields" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/senhaL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="Digite sua senha"
+        android:inputType="textPassword"
         android:textColorHint="#183163"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.577" />
+        app:layout_constraintVertical_bias="0.609" />
 
-    <EditText
-        android:id="@+id/senha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:textColorHint="#183163"
+    <Button
+        android:id="@+id/realizarL"
+        android:layout_width="291dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#183163"
+        android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintVertical_bias="0.725" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,8 +18,8 @@ import com.vitoraugusto.vieats.controller.PessoaController;
 import com.vitoraugusto.vieats.model.Pessoa;
 
 public class RegisterActivity extends AppCompatActivity {
-   private EditText nome, cpf, senha, email;
-    private Button cadastrar;
+    private EditText nome, cpf, senha, email;
+    private Button cadastrar, limpar;
     private Pessoa pessoa;
     private PessoaController pessoaController;
 
@@ -36,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
         senha = findViewById(R.id.senha);
         email = findViewById(R.id.email);
         cadastrar = findViewById(R.id.realizarC);
+        limpar = findViewById(R.id.limpar);
 
         cadastrar.setOnClickListener(v -> {
             String nom = nome.getText().toString().trim();
@@ -45,10 +46,12 @@ public class RegisterActivity extends AppCompatActivity {
 
             if (nom.isEmpty() || cp.isEmpty() || emai.isEmpty() || senh.isEmpty()) {
                 Toast.makeText(RegisterActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
-            } else {
+            }else if(cpf.length()!= 11){
+                Toast.makeText(RegisterActivity.this, "O CPF esta incorreto, o CPF0 deve conter 11 numeros", Toast.LENGTH_SHORT).show();
+            }else {
 
                 Toast.makeText(RegisterActivity.this, "Cadastro Finalizado!!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
 
                 pessoa = new Pessoa(
@@ -62,8 +65,17 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Dados Salvos", Toast.LENGTH_SHORT).show();
             }
         });
+
+        limpar.setOnClickListener(v -> {
+            nome.setText("");
+            email.setText("");
+            senha.setText("");
+            cpf.setText("");
+        });
+
         carregarPessoaSalva();
     }
+
     public void carregarPessoaSalva() {
         Pessoa pessoa2 = pessoaController.carregarPessoa();
         nome.setText(pessoa2.getNome());

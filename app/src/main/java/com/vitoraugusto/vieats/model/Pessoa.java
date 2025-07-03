@@ -18,6 +18,10 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public Pessoa(String email, String senha) {
+        this.email = email;
+        this.senha = senha;
+    }
 
 
     public String getNome() {

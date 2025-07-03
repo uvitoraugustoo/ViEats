@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
-        android:text="Arroz com Feijão e Frango"
+        android:text="Arroz com Feijão e Bife a Parmegiana"
         android:textColor="#183163"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
