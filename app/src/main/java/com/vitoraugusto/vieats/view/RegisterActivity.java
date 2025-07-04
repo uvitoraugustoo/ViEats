@@ -8,12 +8,14 @@ import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vitoraugusto.vieats.R;
+import com.vitoraugusto.vieats.controller.DbController;
 import com.vitoraugusto.vieats.controller.PessoaController;
 import com.vitoraugusto.vieats.model.Pessoa;
 
@@ -21,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText nome, cpf, senha, email;
     private Button cadastrar, limpar;
     private Pessoa pessoa;
+    private TextView loginTrue;
     private PessoaController pessoaController;
 
     @SuppressLint("MissingInflatedId")
@@ -37,8 +40,10 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         cadastrar = findViewById(R.id.realizarC);
         limpar = findViewById(R.id.limpar);
+        loginTrue = findViewById(R.id.loginTrue);
 
         cadastrar.setOnClickListener(v -> {
+
             String nom = nome.getText().toString().trim();
             String emai = email.getText().toString().trim();
             String senh = senha.getText().toString().trim();
@@ -46,13 +51,16 @@ public class RegisterActivity extends AppCompatActivity {
 
             if (nom.isEmpty() || cp.isEmpty() || emai.isEmpty() || senh.isEmpty()) {
                 Toast.makeText(RegisterActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
-            }else if(cpf.length()!= 11){
+            } else if (cpf.length() != 11) {
                 Toast.makeText(RegisterActivity.this, "O CPF esta incorreto, o CPF deve conter 11 numeros", Toast.LENGTH_SHORT).show();
-            }else {
+            } else {
 
                 Toast.makeText(RegisterActivity.this, "Cadastro Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
+
+                DbController dbController = new DbController(this);
+                String resultado;
 
                 pessoa = new Pessoa(
                         nome.getText().toString(),
@@ -61,9 +69,13 @@ public class RegisterActivity extends AppCompatActivity {
                         cpf.getText().toString()
                 );
                 pessoaController.salvarPessoa(pessoa);
-
+                resultado = dbController.insertData(pessoa.getNome(), pessoa.getEmail(), pessoa.getSenha(), pessoa.getCpf());
                 Toast.makeText(RegisterActivity.this, "Dados Salvos", Toast.LENGTH_SHORT).show();
             }
+        });
+        loginTrue.setOnClickListener(v -> {
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
 
         limpar.setOnClickListener(v -> {
@@ -73,14 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
             cpf.setText("");
         });
 
-        carregarPessoaSalva();
+
     }
 
-    public void carregarPessoaSalva() {
-        Pessoa pessoa2 = pessoaController.carregarPessoa();
-        nome.setText(pessoa2.getNome());
-        email.setText(pessoa2.getEmail());
-        senha.setText(pessoa2.getSenha());
-        cpf.setText(pessoa2.getCpf());
-    }
 }

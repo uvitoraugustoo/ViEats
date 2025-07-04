@@ -89,6 +89,7 @@ public class FinalizarPedidosComuns extends AppCompatActivity {
         });
 
     }
+
     private void enviarNotificacao() {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "canal_viEats")

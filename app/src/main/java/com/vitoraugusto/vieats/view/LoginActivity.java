@@ -2,7 +2,6 @@ package com.vitoraugusto.vieats.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +12,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.vitoraugusto.vieats.R;
+import com.vitoraugusto.vieats.controller.DbController;
 import com.vitoraugusto.vieats.controller.LoginController;
 import com.vitoraugusto.vieats.controller.PessoaController;
 import com.vitoraugusto.vieats.model.Pessoa;
@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView cadastroNull;
     LoginController loginController;
     RegisterActivity registerActivity;
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -46,11 +47,14 @@ public class LoginActivity extends AppCompatActivity {
         realizarL.setOnClickListener(v -> {
             String email = emailL.getText().toString().trim();
             String senha = senhaL.getText().toString().trim();
+
+            DbController dbController = new DbController(LoginActivity.this);
+
             if (email.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
-            } else if (!email.equals(pessoa.getEmail()) || !senha.equals(pessoa.getSenha())) {
-                Toast.makeText(LoginActivity.this, "O email ou a senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
-            } else {
+            }
+
+            else if (dbController.verificarLogin(email, senha)){
                 Toast.makeText(LoginActivity.this, "Login Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -61,6 +65,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 );
                 loginController.loginPessoa(pessoa);
+            } else{
+                Toast.makeText(LoginActivity.this, "O email ou a senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
             }
         });
 
