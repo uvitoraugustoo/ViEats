@@ -53,8 +53,10 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
             } else if (cpf.length() != 11) {
                 Toast.makeText(RegisterActivity.this, "O CPF esta incorreto, o CPF deve conter 11 numeros", Toast.LENGTH_SHORT).show();
-            } else {
+            }else if (!emailValido(String.valueOf(email))) {
+                Toast.makeText(this, "Digite um email válido", Toast.LENGTH_SHORT).show();
 
+            } else {
                 Toast.makeText(RegisterActivity.this, "Cadastro Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -86,6 +88,9 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
 
+    }
+    public boolean emailValido(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
 }

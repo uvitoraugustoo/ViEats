@@ -61,6 +61,9 @@ public static final String LOGIN_PREFERENCES ="dados_login";
         return super.toString();
 
     }
+    public boolean emailValido(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
 }
 
 
