@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditText
@@ -27,14 +28,23 @@
         android:id="@+id/finalizarPedido"
         android:layout_width="291dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#183163"
         android:text="CONCLUIR PEDIDO"
+        app:layout_constraintBottom_toTopOf="@+id/limparPedido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/limparPedido"
+        android:layout_width="291dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#183163"
+        android:text="LIMPAR INFORMAÇÕES"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTipo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"

@@ -21,10 +21,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailL, senhaL;
     private Button realizarL, limpar2;
     Pessoa pessoa;
-    TextView cadastroNull;
+    private TextView cadastroNull;
     LoginController loginController;
     RegisterActivity registerActivity;
-
 
 
     @SuppressLint("MissingInflatedId")
@@ -52,9 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (email.isEmpty() || senha.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Preencha todos os Campos", Toast.LENGTH_SHORT).show();
-            }
-
-            else if (dbController.verificarLogin(email, senha)){
+            } else if (dbController.verificarLogin(email, senha)) {
                 Toast.makeText(LoginActivity.this, "Login Finalizado!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -65,18 +62,18 @@ public class LoginActivity extends AppCompatActivity {
 
                 );
                 loginController.loginPessoa(pessoa);
-            } else{
+            } else {
                 Toast.makeText(LoginActivity.this, "O email ou a senha estão incorretos, tente novamente", Toast.LENGTH_SHORT).show();
             }
         });
 
         cadastroNull.setOnClickListener(v -> {
-            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-            startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    startActivity(intent);
                 }
 
         );
-        limpar2.setOnClickListener(v ->{
+        limpar2.setOnClickListener(v -> {
             emailL.setText("");
             senhaL.setText("");
         });

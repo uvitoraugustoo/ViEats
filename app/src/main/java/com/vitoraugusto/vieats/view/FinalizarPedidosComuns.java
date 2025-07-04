@@ -27,7 +27,7 @@ import com.vitoraugusto.vieats.controller.FinalizarPedidosController;
 public class FinalizarPedidosComuns extends AppCompatActivity {
     ImageView voltar;
     Spinner spinnerPagamento, spinnerTipo;
-    Button finalizarPedido;
+    Button finalizarPedido, limparPedidos;
     EditText endereco, numeroEndereco;
 
 
@@ -46,6 +46,7 @@ public class FinalizarPedidosComuns extends AppCompatActivity {
         spinnerPagamento = findViewById(R.id.spinnerPagamento);
         spinnerTipo = findViewById(R.id.spinnerTipo);
         finalizarPedido = findViewById(R.id.finalizarPedido);
+        limparPedidos = findViewById(R.id.limparPedido);
         preferencesController = new FinalizarPedidosController(this);
 
 
@@ -86,6 +87,13 @@ public class FinalizarPedidosComuns extends AppCompatActivity {
             Intent intent = new Intent(FinalizarPedidosComuns.this, MainActivity.class);
             startActivity(intent);
             enviarNotificacao();
+        });
+
+        limparPedidos.setOnClickListener(v ->{
+            endereco.setText("");
+            numeroEndereco.setText("");
+            spinnerPagamento.setSelection(0);
+            spinnerTipo.setSelection(0);
         });
 
     }
