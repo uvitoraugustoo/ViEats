@@ -22,29 +22,31 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintVertical_bias="0.88" />
 
     <Button
         android:id="@+id/finalizarPedido"
         android:layout_width="291dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#183163"
         android:text="CONCLUIR PEDIDO"
-        app:layout_constraintBottom_toTopOf="@+id/limparPedido"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/limparPedido"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/limparPedido"
         android:layout_width="291dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="#183163"
         android:text="LIMPAR INFORMAÇÕES"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerTipo" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -88,7 +90,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.443" />
 
     <Spinner
         android:id="@+id/spinnerPagamento"
@@ -100,7 +102,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/spinnerTipo"
@@ -112,7 +114,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintVertical_bias="0.099" />
 
     <ImageView
         android:id="@+id/logo"

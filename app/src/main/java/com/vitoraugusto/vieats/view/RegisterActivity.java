@@ -87,10 +87,8 @@ public class RegisterActivity extends AppCompatActivity {
             cpf.setText("");
         });
 
-
     }
     public boolean emailValido(String email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
-
 }
